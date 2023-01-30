@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../assets/logo.svg';
 import hamburger from '../assets/hamburger.svg';
 
-function name(params) {}
-
 function Navbar() {
+  const [isActive, setIsActive] = useState(false);
+
+  // hide or reveal menu on mobile
+  function handleHamburger(e) {
+    setIsActive(!isActive);
+  }
+
   return (
-    <nav className="w-full px-4 py-4 text-grayish-violet">
+    <nav className="w-full px-4 py-4 text-grayish-violet relative">
       <div className="flex justify-between items-center gap-4">
         <div className="flex gap-5">
           <div>
@@ -41,10 +46,15 @@ function Navbar() {
             src={hamburger}
             alt="hamburger menu"
             className="w-8 text-grayish-violet"
+            onClick={handleHamburger}
           />
         </div>
       </div>
-      <div className="text-white font-bold text-center p-6 mt-4 rounded-md block md:hidden w-full bg-dark-violet">
+      <div
+        className={` ${
+          isActive ? 'block' : 'hidden'
+        } text-white font-bold text-center p-6 rounded-md block md:hidden bg-dark-violet fixed top-16 left-4 right-4`}
+      >
         <ul className="flex flex-col gap-4">
           <li>
             <a href="#">Features</a>
