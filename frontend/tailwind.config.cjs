@@ -13,6 +13,10 @@ module.exports = {
         'dark-violet-deep': 'hsl(260, 8%, 14%)',
       },
     },
+    backgroundImage: {
+      'shorten-desktopbg': "url('./src/assets/bg-shorten-desktop.svg')",
+      'shorten-mobilebg': "url('./src/assets/bg-shorten-mobile.svg')",
+    },
   },
   plugins: [],
 };
