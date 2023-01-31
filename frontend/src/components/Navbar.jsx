@@ -11,7 +11,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="w-full px-4 py-4 text-grayish-violet relative">
+    <nav className="w-full px-4 py-4 lg:px-16 text-grayish-violet relative">
       <div className="flex justify-between items-center gap-4">
         <div className="flex gap-5">
           <div>
