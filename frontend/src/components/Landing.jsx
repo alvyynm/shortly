@@ -4,20 +4,22 @@ import heroimg from '../assets/illustration-working.svg';
 
 function Landing() {
   return (
-    <section>
+    <section className="w-full px-4 lg:px-16 py-4 mt-5 text-grayish-violet relative">
       {/* // HERO SECTION */}
-      <div>
-        <div>
-          <h1>
-            More than just <span>shorter links</span>{' '}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-44">
+        <div className="order-last lg:order-first flex flex-col justify-center items-center text-center lg:items-start lg:text-left">
+          <h1 className="text-dark-violet-deep text-4xl md:text-6xl  font-bold">
+            More than just <span className="block">shorter links</span>{' '}
           </h1>
-          <p>
+          <p className="mt-3">
             Build your brand’s recognition and get detailed insights on how your
             links are performing.
           </p>
-          <button>Get Started</button>
+          <button className="text-white bg-cyan w-32 px-3 py-2 rounded-3xl hover:opacity-70 mt-6">
+            Get Started
+          </button>
         </div>
-        <div>
+        <div className="-mr-32 md:-mr-80">
           <img
             src={heroimg}
             alt="illustration of person working on a computer"
