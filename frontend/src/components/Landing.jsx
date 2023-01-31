@@ -28,6 +28,21 @@ function Landing() {
       </div>
 
       {/* INPUT SECTION */}
+
+      <div>
+        <form action="/">
+          <label htmlFor="link" className="hidden">
+            Link
+          </label>
+          <input
+            type="text"
+            name="link"
+            id="link"
+            placeholder="Shorten a link here..."
+          />
+          <button type="submit">Shorten It!</button>
+        </form>
+      </div>
       {/* STATS SECTION */}
       {/* CALLOUT SECTION */}
     </section>
