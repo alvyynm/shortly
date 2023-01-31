@@ -53,16 +53,16 @@ function Navbar() {
       <div
         className={` ${
           isActive ? 'block' : 'hidden'
-        } text-white font-bold text-center p-6 rounded-md block md:hidden bg-dark-violet fixed top-16 left-4 right-4 z-20`}
+        } text-white font-bold text-center px-6 py-8 rounded-xl block md:hidden bg-dark-violet fixed top-16 left-4 right-4 z-20`}
       >
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col gap-8">
           <li>
             <a href="#">Features</a>
           </li>
           <li>
             <a href="#">Pricing</a>
           </li>
-          <li className="border-b border-grayish-violet pb-4">
+          <li className="border-b border-grayish-violet pb-8">
             <a href="#">Resources</a>
           </li>
           <li>
