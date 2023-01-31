@@ -53,7 +53,7 @@ function Navbar() {
       <div
         className={` ${
           isActive ? 'block' : 'hidden'
-        } text-white font-bold text-center p-6 rounded-md block md:hidden bg-dark-violet fixed top-16 left-4 right-4`}
+        } text-white font-bold text-center p-6 rounded-md block md:hidden bg-dark-violet fixed top-16 left-4 right-4 z-20`}
       >
         <ul className="flex flex-col gap-4">
           <li>
