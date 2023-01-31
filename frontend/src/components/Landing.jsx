@@ -29,8 +29,11 @@ function Landing() {
 
       {/* INPUT SECTION */}
 
-      <div>
-        <form action="/">
+      <div className="rounded-xl bg-shorten-mobilebg bg-dark-blue bg-blend-screen bg-right-top bg-no-repeat lg:bg-cover  lg:bg-shorten-desktopbg w-full h-40 lg:h-28 mt-10 flex justify-center items-center">
+        <form
+          action="/"
+          className="w-full px-5 lg:px-10 flex flex-col items-center gap-4 lg:flex-row"
+        >
           <label htmlFor="link" className="hidden">
             Link
           </label>
@@ -38,9 +41,16 @@ function Landing() {
             type="text"
             name="link"
             id="link"
+            required
             placeholder="Shorten a link here..."
+            className="w-full lg:w-[80%] rounded-xl px-4 py-3"
           />
-          <button type="submit">Shorten It!</button>
+          <button
+            type="submit"
+            className="text-white font-bold bg-cyan w-full lg:w-[15%] px-4 py-3 rounded-xl hover:bg-[#9ee0e1]"
+          >
+            Shorten It!
+          </button>
         </form>
       </div>
       {/* STATS SECTION */}
