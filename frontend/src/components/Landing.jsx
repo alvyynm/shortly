@@ -126,10 +126,16 @@ function Landing() {
 
       {/* CALLOUT SECTION */}
 
-      <div>
-        <div>
-          <h2>Boost your links today</h2>
-          <button>Get Started</button>
+      <div className="w-full py-20 bg-boost-desktop bg-dark-blue bg-blend-screen bg-no-repeat bg-cover lg:bg-boost-desktop">
+        <div className="px-4 lg:px-16">
+          <div className="text-center">
+            <h2 className="text-white text-2xl md:text-3xl font-bold">
+              Boost your links today
+            </h2>
+            <button className="text-white bg-cyan w-36 px-3 py-2 rounded-3xl hover:bg-[#9ee0e1] mt-6">
+              Get Started
+            </button>
+          </div>
         </div>
       </div>
     </section>
