@@ -59,46 +59,61 @@ function Landing() {
 
       {/* STATS SECTION */}
 
-      <div>
-        <h2>Advanced Statistics</h2>
-        <p>
-          Track how your links are performing across the web with our advanced
-          statistics dashboard.
-        </p>
-        <div>
-          <div>
-            <div>
-              <img src={brandrecog} alt="" />
+      <div className=" py-20 bg-[#eff0f7] relative">
+        <div className="text-center md:w-2/4 lg:w-2/5 mx-auto mb-10">
+          <h2 className="text-dark-violet-deep font-bold text-2xl mb-4">
+            Advanced Statistics
+          </h2>
+          <p>
+            Track how your links are performing across the web with our advanced
+            statistics dashboard.
+          </p>
+        </div>
+        <div className="flex flex-col lg:flex-row items-center gap-16 pt-10 md:pt-0">
+          <div className="md:w-96 text-center lg:text-left px-7 bg-white py-5 rounded-lg z-30">
+            <div className="mb-7 -mt-14 bg-dark-violet w-14 h-14 rounded-full mx-auto lg:ml-4 flex items-center justify-center">
+              <img src={brandrecog} alt="" className="w-8" />
             </div>
-            <h3>Brand Recognition</h3>
-            <p>
-              Boost your brand recognition with each click.Generic links don’t
+            <h3 className="text-dark-violet-deep font-bold text-lg">
+              Brand Recognition
+            </h3>
+            <p className="py-4">
+              Boost your brand recognition with each click. Generic links don’t
               mean a thing. Branded links help instil confidence in your
               content.
             </p>
           </div>
-          <div>
-            <img src={detailrec} alt="" />
-            <div>
-              <h3>Detailed Records</h3>
+          <div className="md:w-96 text-center lg:text-left px-7 bg-white py-5 rounded-lg z-30 lg:mt-14">
+            <div className="mb-7 -mt-14 bg-dark-violet w-14 h-14 rounded-full mx-auto lg:ml-4 flex items-center justify-center">
+              <img src={detailrec} alt="" className="w-8" />
             </div>
-            <p>
+
+            <div>
+              <h3 className="text-dark-violet-deep font-bold text-lg">
+                Detailed Records
+              </h3>
+            </div>
+            <p className="py-4">
               Gain insights into who is clicking your links. Knowing when and
               where people engage with your content helps inform better
               decisions.
             </p>
           </div>
-          <div>
-            <div>
-              <img src={fullycus} alt="" />
+          <div className="md:w-96 text-center lg:text-left px-7 bg-white py-5 rounded-lg z-30 lg:mt-28">
+            <div className="mb-7 -mt-14 bg-dark-violet w-14 h-14 rounded-full mx-auto lg:ml-4 flex items-center justify-center">
+              <img src={fullycus} alt="" className="w-8" />
             </div>
-            <h3>Fully Customizable</h3>
-            <p>
+            <h3 className="text-dark-violet-deep font-bold text-lg">
+              Fully Customizable
+            </h3>
+            <p className="py-4">
               Improve brand awareness and content discoverability through
               customizable links, supercharging audience engagement.
             </p>
           </div>
         </div>
+        {/* Timeline */}
+        <div className="bg-red border-4 border-cyan absolute rotate-90 -left-12 -right-12 top-[55%] lg:top-[60%] md:left-5 md:right-5 lg:transform-none lg:right-60 lg:left-60 z-10"></div>
       </div>
 
       {/* CALLOUT SECTION */}
