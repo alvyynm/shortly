@@ -7,6 +7,8 @@ const shortcodeRoutes = require("./routes/shortcode");
 
 const app = express();
 
+app.use(bodyParser.json());
+
 app.use("/api.shortly/v1/", shortcodeRoutes);
 
 app.listen(port, () => {
