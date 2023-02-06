@@ -7,6 +7,10 @@ import fullycus from '../assets/icon-fully-customizable.svg';
 
 function Landing() {
   const [userUrl, setUserUrl] = useState('');
+  const [shortUrls, setShortUrls] = useState({
+    shortlink: '',
+    originalUrl: '',
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,6 +18,29 @@ function Landing() {
     // Read the form data
     if (userUrl) {
       console.log(userUrl);
+    }
+
+    try {
+      const response = await fetch('http://localhost:8080/api.shortly/v1/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ url: userUrl }),
+      });
+
+      const data = await response.json();
+      setShortUrls({
+        ...shortUrls,
+        shortlink: data.result.full_short_link3,
+        originalUrl: data.result.original_link,
+      });
+
+      if (data) {
+        console.log(shortUrls);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
