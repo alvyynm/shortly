@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import heroimg from '../assets/illustration-working.svg';
 import brandrecog from '../assets/icon-brand-recognition.svg';
@@ -6,8 +6,15 @@ import detailrec from '../assets/icon-detailed-records.svg';
 import fullycus from '../assets/icon-fully-customizable.svg';
 
 function Landing() {
+  const [userUrl, setUserUrl] = useState('');
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Read the form data
+    if (userUrl) {
+      console.log(userUrl);
+    }
   };
 
   return (
@@ -41,6 +48,7 @@ function Landing() {
           <div className="rounded-xl bg-shorten-mobilebg bg-dark-blue bg-blend-screen bg-right-top bg-no-repeat lg:bg-cover  lg:bg-shorten-desktopbg w-full h-40 lg:h-28 mt-10 flex justify-center items-center">
             <form
               onSubmit={handleSubmit}
+              method="post"
               className="w-full px-5 lg:px-10 flex flex-col items-center gap-4 lg:flex-row"
             >
               <label htmlFor="link" className="hidden">
@@ -53,6 +61,8 @@ function Landing() {
                 required
                 placeholder="Shorten a link here..."
                 className="w-full lg:w-[80%] rounded-xl px-4 py-3"
+                value={userUrl}
+                onChange={(e) => setUserUrl(e.target.value)}
               />
               <button
                 type="submit"
