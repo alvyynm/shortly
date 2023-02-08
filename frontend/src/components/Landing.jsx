@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import Links from './Links';
+
 import heroimg from '../assets/illustration-working.svg';
 import brandrecog from '../assets/icon-brand-recognition.svg';
 import detailrec from '../assets/icon-detailed-records.svg';
