@@ -47,7 +47,7 @@ function Landing() {
   return (
     <section className="w-full mt-5 text-grayish-violet relative">
       {/* // HERO SECTION */}
-      <div className="px-4 py-4 lg:px-16">
+      <div className="px-4 py-4 lg:px-16 mb-28 lg:mb-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-44">
             <div className="order-last lg:order-first flex flex-col justify-center items-center text-center lg:items-start lg:text-left">
@@ -69,36 +69,6 @@ function Landing() {
               />
             </div>
           </div>
-
-          {/* INPUT SECTION */}
-
-          <div className="rounded-xl bg-shorten-mobilebg bg-dark-blue bg-blend-screen bg-right-top bg-no-repeat lg:bg-cover  lg:bg-shorten-desktopbg w-full h-40 lg:h-28 mt-10 flex justify-center items-center">
-            <form
-              onSubmit={handleSubmit}
-              method="post"
-              className="w-full px-5 lg:px-10 flex flex-col items-center gap-4 lg:flex-row"
-            >
-              <label htmlFor="link" className="hidden">
-                Link
-              </label>
-              <input
-                type="text"
-                name="link"
-                id="link"
-                required
-                placeholder="Shorten a link here..."
-                className="w-full lg:w-[80%] rounded-xl px-4 py-3"
-                value={userUrl}
-                onChange={(e) => setUserUrl(e.target.value)}
-              />
-              <button
-                type="submit"
-                className="text-white font-bold bg-cyan w-full lg:w-[15%] px-4 py-3 rounded-xl hover:bg-[#9ee0e1]"
-              >
-                Shorten It!
-              </button>
-            </form>
-          </div>
         </div>
       </div>
 
@@ -107,7 +77,37 @@ function Landing() {
       <div className="w-full py-20 bg-[#eff0f7]">
         <div className="px-4 py-4 lg:px-16">
           <div className="max-w-7xl mx-auto relative">
-            <div className="text-center md:w-2/4 lg:w-2/5 mx-auto mb-10">
+            {/* INPUT SECTION */}
+
+            <div className="rounded-xl bg-shorten-mobilebg bg-dark-blue bg-blend-screen bg-right-top bg-no-repeat lg:bg-cover  lg:bg-shorten-desktopbg w-full h-40 lg:h-28 -mt-44 lg:-mt-36 flex justify-center items-center">
+              <form
+                onSubmit={handleSubmit}
+                method="post"
+                className="w-full px-5 lg:px-10 flex flex-col items-center gap-4 lg:flex-row"
+              >
+                <label htmlFor="link" className="hidden">
+                  Link
+                </label>
+                <input
+                  type="text"
+                  name="link"
+                  id="link"
+                  required
+                  placeholder="Shorten a link here..."
+                  className="w-full lg:w-[80%] rounded-xl px-4 py-3"
+                  value={userUrl}
+                  onChange={(e) => setUserUrl(e.target.value)}
+                />
+                <button
+                  type="submit"
+                  className="text-white font-bold bg-cyan w-full lg:w-[15%] px-4 py-3 rounded-xl hover:bg-[#9ee0e1]"
+                >
+                  Shorten It!
+                </button>
+              </form>
+            </div>
+
+            <div className="text-center md:w-2/4 lg:w-2/5 mx-auto mb-10 mt-16">
               <h2 className="text-dark-violet-deep font-bold text-2xl mb-4">
                 Advanced Statistics
               </h2>
@@ -116,7 +116,7 @@ function Landing() {
                 advanced statistics dashboard.
               </p>
             </div>
-            <div className="flex flex-col lg:flex-row items-center gap-16 pt-10 md:pt-0">
+            <div className="flex flex-col lg:flex-row items-center gap-16 pt-10 md:pt-0 relative">
               <div className="md:w-96 text-center lg:text-left px-7 bg-white py-5 rounded-lg z-30">
                 <div className="mb-7 -mt-14 bg-dark-violet w-14 h-14 rounded-full mx-auto lg:ml-4 flex items-center justify-center">
                   <img src={brandrecog} alt="" className="w-8" />
@@ -158,9 +158,9 @@ function Landing() {
                   customizable links, supercharging audience engagement.
                 </p>
               </div>
+              {/* Timeline */}
+              <div className="bg-red border-4 border-cyan absolute rotate-90 -left-12 -right-12 top-[50%] lg:top-[48%] md:left-5 md:right-5 lg:transform-none lg:right-60 lg:left-60 z-10"></div>
             </div>
-            {/* Timeline */}
-            <div className="bg-red border-4 border-cyan absolute rotate-90 -left-12 -right-12 top-[55%] lg:top-[60%] md:left-5 md:right-5 lg:transform-none lg:right-60 lg:left-60 z-10"></div>
           </div>
         </div>
       </div>
