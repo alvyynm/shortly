@@ -4,8 +4,8 @@ function Links({ originalUrl, shortUrl }) {
   return (
     <div className="py-4">
       <div className="rounded-xl flex flex-col items-center lg:justify-between lg:flex-row py-3 px-3 bg-white">
-        <div>
-          <p className="text-dark-violet-deep">
+        <div className="hidden md:inline-flex">
+          <p className="text-dark-violet-deep overflow-x-auto">
             {originalUrl || 'frontendmentor.io'}
           </p>
         </div>
