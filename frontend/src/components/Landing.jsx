@@ -9,10 +9,7 @@ import fullycus from '../assets/icon-fully-customizable.svg';
 
 function Landing() {
   const [userUrl, setUserUrl] = useState('');
-  const [shortUrls, setShortUrls] = useState({
-    shortlink: '',
-    originalUrl: '',
-  });
+  const [shortUrls, setShortUrls] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,14 +29,16 @@ function Landing() {
       });
 
       const data = await response.json();
-      setShortUrls({
-        ...shortUrls,
+      const shortUrlObj = {
         shortlink: data.result.full_short_link3,
         originalUrl: data.result.original_link,
-      });
+      };
+      setShortUrls([...shortUrls, shortUrlObj]);
 
       if (data) {
-        console.log(shortUrls);
+        for (const url of shortUrls) {
+          console.log(shortUrls);
+        }
       }
     } catch (error) {
       console.log(error);
