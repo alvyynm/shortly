@@ -5,7 +5,7 @@ function Links({ originalUrl, shortUrl }) {
     <div className="py-4">
       <div className="rounded-xl flex flex-col items-center lg:justify-between lg:flex-row py-3 px-3 bg-white">
         <div className="hidden md:inline-flex">
-          <p className="text-dark-violet-deep overflow-x-auto">
+          <p className="text-dark-violet-deep">
             {originalUrl || 'frontendmentor.io'}
           </p>
         </div>
