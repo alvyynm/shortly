@@ -108,6 +108,15 @@ function Landing() {
               </form>
             </div>
 
+            {/* LINKS SECTION */}
+            {shortUrls.map((item) => {
+              return (
+                <Links
+                  shortUrl={item.shortlink}
+                  originalUrl={item.originalUrl}
+                />
+              );
+            })}
             <div className="text-center md:w-2/4 lg:w-2/5 mx-auto mb-10 mt-16">
               <h2 className="text-dark-violet-deep font-bold text-2xl mb-4">
                 Advanced Statistics
