@@ -11,9 +11,12 @@ function Landing() {
   const [userUrl, setUserUrl] = useState('');
   const [shortUrls, setShortUrls] = useState([]);
   const [successCopy, setSuccessCopy] = useState(false);
+  const [submittedUrl, setSubmittedUrl] = useState(true);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setSubmittedUrl(userUrl);
 
     // Read the form data
     if (userUrl) {
@@ -111,19 +114,32 @@ function Landing() {
                 method="post"
                 className="w-full px-5 lg:px-10 flex flex-col items-center gap-4 lg:flex-row"
               >
-                <label htmlFor="link" className="hidden">
-                  Link
-                </label>
-                <input
-                  type="text"
-                  name="link"
-                  id="link"
-                  required
-                  placeholder="Shorten a link here..."
-                  className="w-full lg:w-[80%] rounded-xl px-4 py-3 focus:ring-2 focus:ring-cyan outline-none"
-                  value={userUrl}
-                  onChange={(e) => setUserUrl(e.target.value)}
-                />
+                <div className="w-full items-center relative">
+                  <label htmlFor="link" className="hidden">
+                    Link
+                  </label>
+                  <input
+                    type="text"
+                    name="link"
+                    id="link"
+                    placeholder="Shorten a link here..."
+                    className={`w-full rounded-xl px-4 py-3 ring-1 focus:placeholder:text-gray focus:ring-2 focus:ring-cyan outline-none ${
+                      submittedUrl
+                        ? `ring-cyan`
+                        : `ring-red placeholder:text-red`
+                    }`}
+                    value={userUrl}
+                    onChange={(e) => setUserUrl(e.target.value)}
+                  />
+                  <p
+                    className={` text-red text-sm italic absolute lg:mt-1 ${
+                      submittedUrl ? `hidden` : `block`
+                    }`}
+                    id="errorMsg"
+                  >
+                    Please add a link
+                  </p>
+                </div>
                 <button
                   type="submit"
                   className="text-white font-bold bg-cyan w-full lg:w-[15%] px-4 py-3 rounded-xl hover:bg-[#9ee0e1]"
