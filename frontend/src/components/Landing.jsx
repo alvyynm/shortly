@@ -45,6 +45,22 @@ function Landing() {
     }
   };
 
+  //copy to clipboard
+  const copyToClipboard = async (link) => {
+    try {
+      await navigator.clipboard.writeText(link);
+      console.log('Content copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  };
+
+  //copy button
+  const handleClick = (event, key) => {
+    let target = shortUrls.filter((item) => shortUrls.indexOf(item) === key);
+    copyToClipboard(target[0].shortlink);
+  };
+
   return (
     <section className="w-full mt-5 text-grayish-violet relative">
       {/* // HERO SECTION */}
@@ -109,12 +125,34 @@ function Landing() {
             </div>
 
             {/* LINKS SECTION */}
-            {shortUrls.map((item) => {
+            {shortUrls.map((item, index) => {
               return (
-                <Links
-                  shortUrl={item.shortlink}
-                  originalUrl={item.originalUrl}
-                />
+                <div className="py-4" key={index}>
+                  <div className="rounded-xl flex flex-col items-center lg:justify-between lg:flex-row py-3 px-3 bg-white">
+                    <div className="hidden md:inline-flex">
+                      <p className="text-dark-violet-deep">
+                        {item.originalUrl || 'frontendmentor.io'}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="flex flex-row items-center gap-4">
+                        <a
+                          className="text-cyan hover:text-[#9ee0e1]"
+                          href={item.shortUrl || `https://shiny.link/XhzYaX`}
+                          target="_blank"
+                        >
+                          {item.shortUrl || 'https://shiny.link/XhzYaX'}
+                        </a>
+                        <button
+                          onClick={(event) => handleClick(event, index)}
+                          className="text-white bg-cyan hover:bg-[#9ee0e1] px-5 py-1 rounded-md"
+                        >
+                          Copy
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+                </div>
               );
             })}
             <div className="text-center md:w-2/4 lg:w-2/5 mx-auto mb-10 mt-16">
