@@ -74,6 +74,9 @@ function Landing() {
         };
         setShortUrls([...shortUrls, shortUrlObj]);
 
+        // store links in localStorage
+        localStorage.setItem('shortUrls', JSON.stringify(shortUrls));
+
         if (data) {
           for (const url of shortUrls) {
             console.log(shortUrls);
@@ -110,6 +113,9 @@ function Landing() {
       setSuccessCopy(false);
     }, 1000);
   }
+
+  // retrieve links stored in localStorage
+  const localItems = JSON.parse(localStorage.getItem('shortUrls'));
 
   return (
     <section className="w-full mt-5 text-grayish-violet relative">
