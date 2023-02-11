@@ -10,6 +10,7 @@ import fullycus from '../assets/icon-fully-customizable.svg';
 function Landing() {
   const [userUrl, setUserUrl] = useState('');
   const [shortUrls, setShortUrls] = useState([]);
+  const [successCopy, setSuccessCopy] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,6 +51,7 @@ function Landing() {
     try {
       await navigator.clipboard.writeText(link);
       console.log('Content copied to clipboard');
+      setSuccessCopy(true);
     } catch (err) {
       console.error('Failed to copy: ', err);
     }
@@ -60,6 +62,13 @@ function Landing() {
     let target = shortUrls.filter((item) => shortUrls.indexOf(item) === key);
     copyToClipboard(target[0].shortlink);
   };
+
+  // revert Copy button to initial state after 1 second
+  if (successCopy) {
+    setTimeout(() => {
+      setSuccessCopy(false);
+    }, 1000);
+  }
 
   return (
     <section className="w-full mt-5 text-grayish-violet relative">
@@ -145,9 +154,13 @@ function Landing() {
                         </a>
                         <button
                           onClick={(event) => handleClick(event, index)}
-                          className="text-white bg-cyan hover:bg-[#9ee0e1] px-5 py-1 rounded-md"
+                          className={`text-white px-5 py-1 rounded-md ${
+                            successCopy
+                              ? `bg-dark-violet`
+                              : `bg-cyan hover:bg-[#9ee0e1]`
+                          }`}
                         >
-                          Copy
+                          {successCopy ? `Copied!` : `Copy`}
                         </button>
                       </p>
                     </div>
