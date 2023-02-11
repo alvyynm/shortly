@@ -154,7 +154,7 @@ function Landing() {
                         </a>
                         <button
                           onClick={(event) => handleClick(event, index)}
-                          className={`text-white px-5 py-1 rounded-md ${
+                          className={`w-[90px] flex justify-center items-center text-white px-5 py-1 rounded-md ${
                             successCopy
                               ? `bg-dark-violet`
                               : `bg-cyan hover:bg-[#9ee0e1]`
