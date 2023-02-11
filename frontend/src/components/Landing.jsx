@@ -131,17 +131,17 @@ function Landing() {
                   <div className="rounded-xl flex flex-col items-center lg:justify-between lg:flex-row py-3 px-3 bg-white">
                     <div className="hidden md:inline-flex">
                       <p className="text-dark-violet-deep">
-                        {item.originalUrl || 'frontendmentor.io'}
+                        {item.originalUrl}
                       </p>
                     </div>
                     <div>
                       <p className="flex flex-row items-center gap-4">
                         <a
                           className="text-cyan hover:text-[#9ee0e1]"
-                          href={item.shortlink || `https://shiny.link/XhzYaX`}
+                          href={item.shortlink}
                           target="_blank"
                         >
-                          {item.shortlink || 'https://shiny.link/XhzYaX'}
+                          {item.shortlink}
                         </a>
                         <button
                           onClick={(event) => handleClick(event, index)}
