@@ -18,8 +18,16 @@ function Landing() {
 
     setSubmittedUrl(userUrl);
 
+    //check if entered URL is valid
+    function isValidURL(string) {
+      var res = string.match(
+        /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi
+      );
+      return res !== null;
+    }
+
     // check if user has entered a url in form and send it to backend
-    if (userUrl) {
+    if (isValidURL(userUrl)) {
       console.log(userUrl);
       try {
         const response = await fetch('http://localhost:8080/api.shortly/v1/', {
