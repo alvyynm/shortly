@@ -17,6 +17,10 @@ function Navbar() {
     setIsActive(false);
   });
 
+  const closeMenu = () => {
+    setIsActive(false);
+  };
+
   return (
     <nav className="w-full px-4 py-4 lg:px-16 text-grayish-violet relative">
       <div className="max-w-7xl mx-auto">
@@ -63,7 +67,7 @@ function Navbar() {
             isActive ? 'block' : 'hidden'
           } text-white font-bold text-center px-6 py-8 rounded-xl block md:hidden bg-dark-violet fixed top-16 left-4 right-4 z-20`}
         >
-          <ul className="flex flex-col gap-8">
+          <ul onClick={closeMenu} className="flex flex-col gap-8">
             <li>
               <a href="#">Features</a>
             </li>
