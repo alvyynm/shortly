@@ -195,7 +195,7 @@ function Landing() {
             </div>
 
             {/* LINKS SECTION */}
-            {shortUrls.map((item, index) => {
+            {(localItems ? localItems : shortUrls).map((item, index) => {
               return (
                 <div className="py-4" key={index}>
                   <div className="rounded-xl flex flex-col items-center lg:justify-between lg:flex-row py-3 px-3 bg-white">
