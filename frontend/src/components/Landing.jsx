@@ -18,34 +18,33 @@ function Landing() {
 
     setSubmittedUrl(userUrl);
 
-    // Read the form data
+    // check if user has entered a url in form and send it to backend
     if (userUrl) {
       console.log(userUrl);
-    }
+      try {
+        const response = await fetch('http://localhost:8080/api.shortly/v1/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ url: userUrl }),
+        });
 
-    try {
-      const response = await fetch('http://localhost:8080/api.shortly/v1/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ url: userUrl }),
-      });
+        const data = await response.json();
+        const shortUrlObj = {
+          shortlink: data.result.full_short_link3,
+          originalUrl: data.result.original_link,
+        };
+        setShortUrls([...shortUrls, shortUrlObj]);
 
-      const data = await response.json();
-      const shortUrlObj = {
-        shortlink: data.result.full_short_link3,
-        originalUrl: data.result.original_link,
-      };
-      setShortUrls([...shortUrls, shortUrlObj]);
-
-      if (data) {
-        for (const url of shortUrls) {
-          console.log(shortUrls);
+        if (data) {
+          for (const url of shortUrls) {
+            console.log(shortUrls);
+          }
         }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
     }
   };
 
