@@ -120,7 +120,7 @@ function Landing() {
                   id="link"
                   required
                   placeholder="Shorten a link here..."
-                  className="w-full lg:w-[80%] rounded-xl px-4 py-3"
+                  className="w-full lg:w-[80%] rounded-xl px-4 py-3 focus:ring-2 focus:ring-cyan outline-none"
                   value={userUrl}
                   onChange={(e) => setUserUrl(e.target.value)}
                 />
