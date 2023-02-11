@@ -138,10 +138,10 @@ function Landing() {
                       <p className="flex flex-row items-center gap-4">
                         <a
                           className="text-cyan hover:text-[#9ee0e1]"
-                          href={item.shortUrl || `https://shiny.link/XhzYaX`}
+                          href={item.shortlink || `https://shiny.link/XhzYaX`}
                           target="_blank"
                         >
-                          {item.shortUrl || 'https://shiny.link/XhzYaX'}
+                          {item.shortlink || 'https://shiny.link/XhzYaX'}
                         </a>
                         <button
                           onClick={(event) => handleClick(event, index)}
