@@ -11,7 +11,7 @@ function Footer() {
     <footer className="w-full py-20 text-grayish-violet bg-dark-violet-deep">
       <div className="px-4 py-4 lg:px-16">
         <div className="max-w-7xl mx-auto relative">
-          <div className="text-center grid grid-cols-1 justify-items-center lg:justify-items-start md:grid-cols-4 lg:grid-cols-6">
+          <div className="text-center md:text-left grid grid-cols-1 justify-items-center lg:justify-items-start md:grid-cols-4 lg:grid-cols-6">
             <div className="lg:col-span-2 mb-8 lg:mb-0">
               <img src={logo} alt="shortly white logo" />
             </div>
