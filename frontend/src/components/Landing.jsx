@@ -74,6 +74,9 @@ function Landing() {
         };
         setShortUrls([...shortUrls, shortUrlObj]);
 
+        // store links in localStorage
+        localStorage.setItem('shortUrls', JSON.stringify(shortUrls));
+
         if (data) {
           for (const url of shortUrls) {
             console.log(shortUrls);
@@ -110,6 +113,9 @@ function Landing() {
       setSuccessCopy(false);
     }, 1000);
   }
+
+  // retrieve links stored in localStorage
+  const localItems = JSON.parse(localStorage.getItem('shortUrls'));
 
   return (
     <section className="w-full mt-5 text-grayish-violet relative">
@@ -189,7 +195,7 @@ function Landing() {
             </div>
 
             {/* LINKS SECTION */}
-            {shortUrls.map((item, index) => {
+            {(localItems ? localItems : shortUrls).map((item, index) => {
               return (
                 <div className="py-4" key={index}>
                   <div className="rounded-xl flex flex-col items-center lg:justify-between lg:flex-row py-3 px-3 bg-white">
