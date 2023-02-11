@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Links from './Links';
 
@@ -12,6 +14,32 @@ function Landing() {
   const [shortUrls, setShortUrls] = useState([]);
   const [successCopy, setSuccessCopy] = useState(false);
   const [submittedUrl, setSubmittedUrl] = useState(true);
+
+  // toast message on valid url
+  const notifySuccess = () =>
+    toast.success('Great loading...', {
+      position: 'top-center',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
+
+  // toast message on invalid url
+  const notifyError = () =>
+    toast.error('Invalid URL', {
+      position: 'top-center',
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,6 +56,7 @@ function Landing() {
 
     // check if user has entered a url in form and send it to backend
     if (isValidURL(userUrl)) {
+      notifySuccess();
       console.log(userUrl);
       try {
         const response = await fetch('http://localhost:8080/api.shortly/v1/', {
@@ -53,6 +82,8 @@ function Landing() {
       } catch (error) {
         console.log(error);
       }
+    } else {
+      notifyError();
     }
   };
 
@@ -107,6 +138,7 @@ function Landing() {
           </div>
         </div>
       </div>
+      <ToastContainer />
 
       {/* STATS SECTION */}
 
