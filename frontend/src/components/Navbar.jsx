@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import useOnclickOutside from 'react-cool-onclickoutside';
+
 import logo from '../assets/logo.svg';
 import hamburger from '../assets/hamburger.svg';
 
@@ -9,6 +11,11 @@ function Navbar() {
   function handleHamburger(e) {
     setIsActive(!isActive);
   }
+
+  // close mobile menu by clicking anywhere
+  const ref = useOnclickOutside(() => {
+    setIsActive(false);
+  });
 
   return (
     <nav className="w-full px-4 py-4 lg:px-16 text-grayish-violet relative">
@@ -42,7 +49,7 @@ function Navbar() {
               </button>
             </div>
           </div>
-          <div className="md:hidden">
+          <div ref={ref} className="md:hidden">
             <img
               src={hamburger}
               alt="hamburger menu"
