@@ -111,7 +111,7 @@ function Landing() {
               <form
                 onSubmit={handleSubmit}
                 method="post"
-                className="w-full px-5 lg:px-10 flex flex-col items-center gap-4 lg:flex-row"
+                className="w-full px-5 lg:px-10 flex flex-col items-center gap-6 lg:gap-4 lg:flex-row"
               >
                 <div className="w-full items-center relative">
                   <label htmlFor="link" className="hidden">
